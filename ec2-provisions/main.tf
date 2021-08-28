@@ -14,7 +14,12 @@ provider "aws" {
     
 }
 
-# Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
+# Create AWS resource
+resource "aws_instance" "ubuntu-server-virgina-region" {
+    ami="ami-0c2b8ca1dad447f8a"
+    instance_type="t2.micro"
+    tags = {
+        Name= "ubuntu-server-sydney",
+        Department="IT"
+    }
 }
